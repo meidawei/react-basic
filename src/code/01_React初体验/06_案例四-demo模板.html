@@ -43,9 +43,16 @@
           const { age } = this.state
           const ageText = age >= 18 ? '成年人' : '未成年人'
           const liEls = this.state.movies.map((movie) => <li>{movie}</li>)
+          // 返回jsx内容
           return (
             <div>
+              {/*1.Number/String/Array直接显示出来*/}
               <h2>{message}</h2>
+              <p>计数器：{counter}</p>
+              <p>数组：{names}</p>
+              <h2>{String(aaa)}</h2>
+              <h2>bbb:{bbb}</h2>
+              <h2>{ccc.toString()}</h2>
             </div>
           )
         }
