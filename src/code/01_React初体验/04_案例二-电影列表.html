@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hello React</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <div id="app"></div>
+    <!-- 添加依赖 -->
+    <!-- 依赖三个包 -->
+    <!-- CDN引入 -->
+    <script
+      crossorigin
+      src="https://unpkg.com/react@18/umd/react.development.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
+    ></script>
+    <!-- babel -->
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    <script type="text/babel">
+      const root = ReactDOM.createRoot(document.getElementById('root'))
+      // 封装App组件
+      class App extends React.Component {
+        constructor() {
+          super()
+          this.state = {
+            movies: [
+              '星际穿越',
+              '流浪地球',
+              '独行月球',
+              '大话西游',
+              '火星救援',
+            ],
+          }
+        }
+        render() {
+          return (
+            <div>
+              <h2>电影列表</h2>
+              <ul>
+                {this.state.movies.map((item) => (
+                  <li>{item}</li>
+                ))}
+              </ul>
+            </div>
+          )
+        }
+      }
+      // 2.渲染组件
+      root.render(<App />)
+    </script>
+  </body>
+</html>

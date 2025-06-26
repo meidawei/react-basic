@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hello React</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <div id="app"></div>
+    <!-- 添加依赖 -->
+    <!-- 依赖三个包 -->
+    <!-- CDN引入 -->
+    <script
+      crossorigin
+      src="https://unpkg.com/react@18/umd/react.development.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
+    ></script>
+    <!-- babel -->
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    <script type="text/babel">
+      // 使用组件进行重构代码
+      // 类组件和函数式组件
+      class App extends React.Component {
+        // 组件数据
+        constructor() {
+          // super调用父类的构造函数
+          super()
+          this.state = {
+            message: 'Hello React!',
+            counter: 10,
+          }
+          //   对需要绑定的方法，提前绑定好this
+          this.increment = this.increment.bind(this)
+          this.decrement = this.decrement.bind(this)
+        }
+        // 组件方法
+        // 新增方法
+        increment() {
+          // 内部完成两件事情
+          this.setState({
+            counter: this.state.counter + 1,
+          })
+        }
+        // 减少方法
+        decrement() {
+          // 内部完成两件事情
+          this.setState({
+            counter: this.state.counter > 0 ? this.state.counter - 1 : 0,
+          })
+        }
+        // 渲染内容 render方法
+        render() {
+          const { counter } = this.state
+
+          return (
+            <div>
+              <h2>当前计数{counter}</h2>
+              <button onClick={this.increment}>+1</button>
+              <button onClick={this.decrement}>-1</button>
+            </div>
+          )
+        }
+      }
+      // 将组件渲染到界面上
+      const root = ReactDOM.createRoot(document.getElementById('root'))
+      // 根组件
+      root.render(<App />)
+    </script>
+  </body>
+</html>

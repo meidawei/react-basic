@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>React</title>
+  </head>
+  <body>
+    <div id="root"></div>
+
+    <script src="../lib/react.js"></script>
+    <script src="../lib/react-dom.js"></script>
+    <script src="../lib/babel.js"></script>
+
+    <script type="text/babel">
+      // 1.定义App根组件
+      class App extends React.Component {
+        constructor() {
+          super()
+          this.state = {
+            counter: 100,
+            message: 'Hello World',
+            names: ['abc', 'cba', 'nba'],
+            aaa: undefined,
+            bbb: null,
+            ccc: true,
+            friend: { name: 'kobe' },
+            firstName: 'kobe',
+            lastName: 'bryant',
+            age: 20,
+            movies: ['流浪地球', '星际穿越', '独行月球'],
+          }
+        }
+
+        render() {
+          const { message, names, counter } = this.state
+          const { aaa, bbb, ccc } = this.state
+          const { friend } = this.state
+          // 2.对内容进行运算后显示(插入表示)
+          const { firstName, lastName } = this.state
+          const fullName = firstName + ' ' + lastName
+          const { age } = this.state
+          const ageText = age >= 18 ? '成年人' : '未成年人'
+          const liEls = this.state.movies.map((movie) => <li>{movie}</li>)
+          return (
+            <div>
+              <h2>{message}</h2>
+            </div>
+          )
+        }
+      }
+
+      // 2.创建root并且渲染App组件
+      const root = ReactDOM.createRoot(document.querySelector('#root'))
+      root.render(<App />)
+    </script>
+  </body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hello React</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <div id="app"></div>
+    <!-- 添加依赖 -->
+    <!-- 依赖三个包 -->
+    <!-- CDN引入 -->
+    <script
+      crossorigin
+      src="https://unpkg.com/react@18/umd/react.development.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
+    ></script>
+    <!-- babel -->
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    <script type="text/babel">
+      // React18之后
+      const root = ReactDOM.createRoot(document.getElementById('root'))
+      //   将文本定义为变量
+      let message = 'Hello React!'
+      // 监听按钮的电机
+      function btnClick() {
+        // 修改数据
+        message = 'Hello React! 你好，React!'
+        // 重新渲染界面
+        rootRender()
+      }
+      //   封装一个渲染函数
+      function rootRender() {
+        root.render(
+          <div>
+            <h2>{message}</h2>
+            <button onClick={btnClick}>点击我</button>
+          </div>
+        )
+      }
+      //   执行函数
+      rootRender()
+    </script>
+  </body>
+</html>
