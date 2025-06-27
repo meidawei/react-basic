@@ -1,4 +1,5 @@
 # react-basic
-React练习笔记
-2025年5月13日~2025年5月15日
-将react18、Typescript、JavaScript、Nextjs、Nest等基础过一遍
+
+React 练习笔记
+2025 年 6 月 25 日~2025 年 6 月 29 日
+将 react18、Typescript、JavaScript、Nextjs、Nest 等基础过一遍

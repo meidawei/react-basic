@@ -2,8 +2,8 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 
 // 导入Hello、Button组件
-import Hello from './Hello'
-import Button from './Button'
+import Hello from '../../../learn_component/01_类组件和函数组件/Hello'
+import Button from '../../../learn_component/01_类组件和函数组件/Button'
 
 const list = (
   <>
