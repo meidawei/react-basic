@@ -8,7 +8,8 @@ import ReactDOM from 'react-dom/client'
 // import App from './learn_component/06_组件通信案例练习/App.jsx'
 // import App from './learn_component/07_组件的插槽实现/App.jsx'
 // import App from './learn_component/08_组件作用域插槽/App.jsx'
-import App from './learn_component/09_非父子通信-Context/App.jsx'
+// import App from './learn_component/09_非父子通信-Context/App.jsx'
+import App from './learn_component/10_非父子通信-EventBus/App.jsx'
 
 // 创建真实的DOMRoot
 const root = ReactDOM.createRoot(document.getElementById('root'))
