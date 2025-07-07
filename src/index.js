@@ -60,7 +60,7 @@
 // // foo("why", 18, 1.88)
 // foo`my name is ${name}, age is ${age}`
 
-import ReactDOM from 'react-dom/client'
+// import ReactDOM from 'react-dom/client'
 // import { StrictMode } from 'react'
 // import App from './App_class';
 // import App from './01_类组件和函数组件/App_func'
@@ -81,7 +81,7 @@ import ReactDOM from 'react-dom/client'
 // import App from "./14_ref获取DOM和组件/03_ref获取函数组件的DOM"
 // import App from "./15_受控和非受控组件/App"
 
-import App from './learn_component/17_React的Portals/App'
+// import App from './learn_component/17_React的Portals/App'
 // import App from "./16_React高阶组件/05_高阶组件应用-生命周期"
 // import App from "./17_React的Portals/App"
 // import App from './learn_component/18_React的fragment/App'
@@ -90,10 +90,25 @@ import App from './learn_component/17_React的Portals/App'
 // import App from "./20_React的动画实现/01_CSSTransition动画/App"
 // import App from "./20_React的动画实现/02_SwitchTransition/App"
 // import App from './20_React的动画实现/03_TransitionGroup/App'"
+// const root = ReactDOM.createRoot(document.getElementById('root'))
+// root.render(
+//   // <StrictMode>
+//   <App name="why" />
+//   // </StrictMode>
+// )
+// import { StrictMode } from "react"
+import ReactDOM from 'react-dom/client'
+import App from './learn_reactrouter/App'
+import { HashRouter } from 'react-router-dom'
+import { Suspense } from 'react'
 
-const root = ReactDOM.createRoot(document.getElementById('root'))
+const root = ReactDOM.createRoot(document.querySelector('#root'))
 root.render(
   // <StrictMode>
-  <App name="why" />
+  <HashRouter>
+    <Suspense fallback={<h3>Loading...</h3>}>
+      <App />
+    </Suspense>
+  </HashRouter>
   // </StrictMode>
 )
