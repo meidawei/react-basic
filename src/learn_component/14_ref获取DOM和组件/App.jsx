@@ -1,14 +1,13 @@
-import React, { PureComponent, createRef } from 'react'
+import React, { PureComponent, createRef, forwardRef } from 'react'
 
-class HelloWorld extends PureComponent {
-  test() {
-    console.log('test------')
-  }
-
-  render() {
-    return <h1>Hello World</h1>
-  }
-}
+const HelloWorld = forwardRef(function (props, ref) {
+  return (
+    <div>
+      <h1 ref={ref}>Hello World</h1>
+      <p>哈哈哈</p>
+    </div>
+  )
+})
 
 export class App extends PureComponent {
   constructor() {
@@ -18,9 +17,7 @@ export class App extends PureComponent {
   }
 
   getComponent() {
-    console.log('this.hwRef', this.hwRef)
     console.log(this.hwRef.current)
-    this.hwRef.current.test()
   }
 
   render() {
